@@ -1,6 +1,6 @@
 {
   "name": "temperature-service",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "build/server.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "body-parser": "^1.16.1",
     "bootstrap": "^3.3.7",
     "chalk": "^2.1.0",
+    "execa": "^0.8.0",
     "express": "^4.14.1",
     "jquery": "^3.1.1",
     "lodash": "^4.17.4",

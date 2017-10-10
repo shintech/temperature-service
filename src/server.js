@@ -3,6 +3,7 @@ import bodyParser from 'body-parser'
 import path from 'path'
 import http from 'http'
 import logger from 'winston'
+import execa from 'execa'
 import chalk from 'chalk'
 import getRouter from './router'
 import init from './db'
@@ -39,4 +40,9 @@ server.on('listening', () => {
   logger.info(`${chalk.bgBlack.cyan(_pkg.name)} version ${chalk.bgBlack.yellow(_pkg.version)} is listening on port ${chalk.bgBlack.green(port)}...`)
 })
 
-server.listen(port)
+const cmd = 'sudo modprobe w1-gpio && sudo modprobe w1-therm'
+
+execa.shell(cmd)
+.then(() => {
+  server.listen(port)
+})

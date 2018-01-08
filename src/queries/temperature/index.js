@@ -1,4 +1,3 @@
-import execa from 'execa'
 import fs from 'fs'
 
 export default function (options) {
